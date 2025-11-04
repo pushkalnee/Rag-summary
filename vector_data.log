@@ -1,0 +1,50 @@
+2025-11-04 08:27:07,047 | INFO | __main__ | Using CPU device for embeddings.
+2025-11-04 08:27:07,171 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-04 08:27:07,600 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-04 08:27:19,948 | INFO | __main__ | VectorData initialized with model on cpu.
+2025-11-04 08:27:19,948 | INFO | __main__ | Loading documents from: document
+2025-11-04 08:27:24,530 | INFO | __main__ | Total chunks created: 2710
+2025-11-04 08:33:38,541 | INFO | __main__ | Stored 2710 embeddings successfully.
+2025-11-04 08:36:16,524 | INFO | __main__ | Using CPU device for embeddings.
+2025-11-04 08:36:16,664 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-04 08:36:16,950 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-04 08:36:28,190 | INFO | __main__ | VectorData initialized with model on cpu.
+2025-11-04 08:36:28,915 | INFO | __main__ | Query returned 5 results.
+2025-11-04 08:54:48,487 | INFO | __main__ | Using CPU device for embeddings.
+2025-11-04 08:54:48,714 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-04 08:54:49,229 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-04 08:55:00,347 | INFO | __main__ | VectorData initialized with model on cpu.
+2025-11-04 08:55:00,347 | INFO | __main__ | ConversationManager initialized successfully.
+2025-11-04 08:55:00,359 | ERROR | __main__ | Query error: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\HP\venv\Lib\site-packages\sentence_transformers\SentenceTransformer.py", line 1621, in tokenize
+    return self[0].tokenize(texts, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\venv\Lib\site-packages\sentence_transformers\models\Transformer.py", line 307, in tokenize
+    batch1.append(text_tuple[0])
+                  ~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\HP\ClgRag\rag_sumrizer.py", line 68, in query
+    query_embedding = self.model.encode(query_text).tolist()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\venv\Lib\site-packages\torch\utils\_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\venv\Lib\site-packages\sentence_transformers\SentenceTransformer.py", line 1062, in encode
+    features = self.tokenize(sentences_batch, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\venv\Lib\site-packages\sentence_transformers\SentenceTransformer.py", line 1623, in tokenize
+    return self[0].tokenize(texts)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\venv\Lib\site-packages\sentence_transformers\models\Transformer.py", line 307, in tokenize
+    batch1.append(text_tuple[0])
+                  ~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-11-04 08:55:01,310 | INFO | __main__ | Query returned 5 results.
+2025-11-04 08:55:01,310 | INFO | __main__ | Retrieved 5 context items for query.
+2025-11-04 08:55:03,510 | INFO | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-04 08:55:03,556 | INFO | __main__ | Response generated successfully for query: None
